@@ -2,9 +2,4 @@ ip addr add 129.30.192.65/26 dev eth0
 
 ip route add default via 129.30.192.124
 
-
-
-
-
-
 ip link set dev eth0 mtu 1000
