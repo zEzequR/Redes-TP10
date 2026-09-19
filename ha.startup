@@ -4,3 +4,5 @@ ip r add default via 170.16.255.252
 ip link set dev eth0 mtu 1200
 
 ln -sf /shared/hosts /etc/hosts
+
+ln -sf /shared/resolv.conf /etc/resolv.conf

@@ -5,3 +5,5 @@ ip route add default via 129.30.192.124
 ip link set dev eth0 mtu 1000
 
 ln -sf /shared/hosts /etc/hosts
+
+ln -sf /shared/resolv.conf /etc/resolv.conf

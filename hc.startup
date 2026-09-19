@@ -3,3 +3,5 @@ ip addr add 11.11.0.1/20 dev eth0
 ip route add default via 11.11.15.252
 
 ln -sf /shared/hosts /etc/hosts
+
+ln -sf /shared/resolv.conf /etc/resolv.conf
