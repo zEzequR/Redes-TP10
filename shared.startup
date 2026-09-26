@@ -1,0 +1,142 @@
+#!/bin/bash
+
+HOST=$(hostname)
+
+case "$HOST" in
+
+  ra)
+    cat <<EOF > /etc/quagga/zebra.conf
+hostname ra
+password zebra
+EOF
+    cat <<EOF > /etc/quagga/ospfd.conf
+hostname ra
+password zebra
+enable password zebra
+!
+interface eth0
+ ip ospf area 0
+!
+interface eth1
+ ip ospf area 0
+ ip ospf cost 70
+!
+interface eth2
+ ip ospf area 0
+ ip ospf cost 22
+!
+EOF
+    ;;
+
+  rb)
+    cat <<EOF > /etc/quagga/zebra.conf
+hostname rb
+password zebra
+EOF
+    cat <<EOF > /etc/quagga/ospfd.conf
+hostname rb
+password zebra
+enable password zebra
+!
+interface eth0
+ ip ospf area 0
+!
+interface eth1
+ ip ospf area 0
+ ip ospf cost 20
+!
+interface eth2
+ ip ospf area 0
+ ip ospf cost 25
+!
+interface eth3
+ ip ospf area 0
+ ip ospf cost 25
+!
+EOF
+    ;;
+
+  rc)
+    cat <<EOF > /etc/quagga/zebra.conf
+hostname rc
+password zebra
+EOF
+    cat <<EOF > /etc/quagga/ospfd.conf
+hostname rc
+password zebra
+enable password zebra
+!
+interface eth0
+ ip ospf area 0
+!
+interface eth1
+ ip ospf area 0
+ ip ospf cost 25
+!
+interface eth2
+ ip ospf area 0
+ ip ospf cost 24
+!
+interface eth3
+ ip ospf area 0
+ ip ospf cost 70
+!
+EOF
+    ;;
+
+  rd)
+    cat <<EOF > /etc/quagga/zebra.conf
+hostname rd
+password zebra
+EOF
+    cat <<EOF > /etc/quagga/ospfd.conf
+hostname rd
+password zebra
+enable password zebra
+!
+interface eth0
+ ip ospf area 0
+!
+interface eth1
+ ip ospf area 0
+ ip ospf cost 30
+!
+interface eth2
+ ip ospf area 0
+ ip ospf cost 60
+!
+EOF
+    ;;
+
+  re)
+    cat <<EOF > /etc/quagga/zebra.conf
+hostname re
+password zebra
+EOF
+    cat <<EOF > /etc/quagga/ospfd.conf
+hostname re
+password zebra
+enable password zebra
+!
+interface eth0
+ ip ospf area 0
+ ip ospf cost 23
+!
+interface eth1
+ ip ospf area 0
+ ip ospf cost 23
+!
+!
+router ospf
+ default-information originate always
+!
+EOF
+    ;;
+
+  *)
+    exit 0
+    ;;
+esac
+
+chown quagga:quaggavty /etc/quagga/zebra.conf /etc/quagga/ospfd.conf /etc/quagga/daemons
+chmod 640 /etc/quagga/zebra.conf /etc/quagga/ospfd.conf /etc/quagga/daemons
