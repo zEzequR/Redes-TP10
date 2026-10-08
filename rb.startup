@@ -6,9 +6,6 @@ ip a add 192.168.50.145/30 dev eth3
 ip link set dev eth1 mtu 1000
 ip link set dev eth3 mtu 620
 
-
-ln -sf /shared/hosts /etc/hosts
-
 ln -sf /shared/daemons /etc/quagga/daemons
 
 bash /shared/quagga.startup

@@ -2,6 +2,8 @@
 
 HOST=$(hostname)
 
+cp /shared/resolv.conf /etc/resolv.conf
+
 case "$HOST" in
 
   ra)

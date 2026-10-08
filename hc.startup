@@ -2,6 +2,10 @@ ip addr add 11.11.0.1/20 dev eth0
 
 ip route add default via 11.11.15.252
 
-ln -sf /shared/hosts /etc/hosts
+cp /shared/named.conf /etc/bind/named.conf
+
+cp /shared/db.ramos.izo /etc/bind/db.ramos.izo
 
 ln -sf /shared/resolv.conf /etc/resolv.conf
+
+bash /shared/9bind.startup

@@ -1,0 +1,41 @@
+@   IN  SOA hc.ramos.izo. admin.ramos.izo. (
+            2026100701  ; 1. Serial
+            3600        ; 2. Refresh
+            900         ; 3. Retry
+            604800      ; 4. Expire
+            60 )     ; 5. Negative cache TTL
+
+@     IN  NS  hc.ramos.izo.
+
+; Hosts
+ha   IN  A    170.16.128.1
+hb   IN  A    200.3.124.1
+hc   IN  A    11.11.0.1
+hd   IN  A    129.30.192.65
+
+; RA
+ra0  IN  A    170.16.255.252
+ra1  IN  A    192.168.50.129
+ra2  IN  A    192.168.50.142
+
+; RB
+rb0  IN  A    200.3.124.60
+rb1  IN  A    192.168.50.130
+rb2  IN  A    192.168.50.134
+rb3  IN  A    192.168.50.145
+
+; RC
+rc0  IN  A    11.11.15.252
+rc1  IN  A    192.168.50.141
+rc2  IN  A    192.168.50.137
+rc3  IN  A    192.168.50.149
+
+; RD
+rd0  IN  A    129.30.192.124
+rd1  IN  A    192.168.50.150
+rd2  IN  A    192.168.50.146
+
+; RE
+re0  IN  A    192.168.50.138
+re1  IN  A    192.168.50.133
+re2  IN  A    172.17.0.1

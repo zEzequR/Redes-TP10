@@ -1,8 +1,6 @@
 ip a add 192.168.50.138/30 dev eth0
 ip a add 192.168.50.133/30 dev eth1
 
-ln -sf /shared/hosts /etc/hosts
-
 ln -sf /shared/daemons /etc/quagga/daemons
 
 iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
